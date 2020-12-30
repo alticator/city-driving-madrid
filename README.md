@@ -1,2 +1,2 @@
-# city-driving-madrid
-Alticator City Driving Madrid, based on the City Driving game, comes with a game world based on Madrid, Spain.
+# City Driving Madrid
+Based on the City Driving game, this game comes with the city of Madrid and a beltway around it.
