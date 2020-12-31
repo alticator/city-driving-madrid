@@ -14,7 +14,16 @@ public class CameraMove : MonoBehaviour
     public float rotationSpeed;
 
     public int mapSize;
+    public int mapZOffset;
 
+    Camera cameraComponent;
+
+    void Start()
+    {
+        cameraComponent = GetComponent<Camera>();
+    }
+
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -30,11 +39,13 @@ public class CameraMove : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!mapView)
         {
+            // Reset the camera far clipping plane
+            cameraComponent.farClipPlane = 1000;
+
             var targetPosition = targetObject.TransformPoint(offset);
             cameraPosition = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
             transform.position = cameraPosition;
@@ -45,7 +56,10 @@ public class CameraMove : MonoBehaviour
         }
         else if (mapView)
         {
-            var cameraPosition = Vector3.up * mapSize;
+            // Able the camera to see further to show the full game world on the map
+            cameraComponent.farClipPlane = 2500;
+
+            var cameraPosition = Vector3.up * mapSize + new Vector3(0, 0, mapZOffset);
             cameraPosition.x += 500;
             transform.position = cameraPosition;
             var rotation = new Vector3(90, 0, 0);

@@ -140,7 +140,8 @@ public class Player : MonoBehaviour
         HandleRespawn();
         Motor();
         Steer();
-        // UpdateWheels disabled
+
+        // UpdateWheels disabled because the wheels turn incorrectly with the newer car (The car was updated for Alticator City Driving Plus)
         //UpdateWheels();
     }
 }
