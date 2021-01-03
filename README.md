@@ -1,6 +1,6 @@
 # City Driving Madrid
-Based on the City Driving game, this game comes with the city of Madrid and a beltway around it.
+Based on the game Alticator City Driving, the game lets you explore and drive around the city of Madrid.
 
-**Downloads**
-
-See *releases* for downloads
+## Downloads
+**Web:** https://webgames.alticator.com/games/citydrivingmadrid \
+**Other Platforms:** See *releases*
